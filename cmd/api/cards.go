@@ -19,18 +19,15 @@ func (app *application) showCardHandler(w http.ResponseWriter, r *http.Request) 
 		return
 	}
 	card := data.Card{
-		ID:           id,
-		CreatedAt:    time.Now(),
-		Name:         "Truthear x Crinacle Zero:BLUE2",
-		Brand:        "Truthear",
-		Collab:       "Crinicle",
-		Year:         2025,
-		Connectivity: "",
-		Impedence:    "5.8Ω + 15% @1kHz",
-		NozzleSize:   "",
-		Cable:        " OFC Silver Plating + OFC Coaxial",
-		Genres:       []string{"Vocal", "Base", "Middle Tone"},
-		Version:      1,
+		ID:         id,
+		CreatedAt:  time.Now(),
+		Name:       "Bulbasuar",
+		SetName:    "Genetic Apex",
+		NumberCard: 001,
+		Rarity:     "SSS",
+		Artist:     "Hideo Kojima",
+		Packs:      []string{"Promo A", "Genetic Apex", "Anniversary"},
+		Version:    1,
 	}
 	// Encode the struct to JSON and send it as the HTTP response.
 	err = app.writeJSON(w, http.StatusOK, card, nil)
