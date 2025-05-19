@@ -1,4 +1,4 @@
-module github.com/teeratem/iem-api
+module github.com/teeratem/tcgp
 
 go 1.24.3
 
