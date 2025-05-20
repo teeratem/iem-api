@@ -29,8 +29,8 @@ func (app *application) showCardHandler(w http.ResponseWriter, r *http.Request) 
 		Packs:      []string{"Promo A", "Genetic Apex", "Anniversary"},
 		Version:    1,
 	}
-	// Encode the struct to JSON and send it as the HTTP response.
-	err = app.writeJSON(w, http.StatusOK, card, nil)
+
+	err = app.writeJSON(w, http.StatusOK, envelope{"card": card}, nil)
 	if err != nil {
 		app.logger.Error(err.Error())
 		http.Error(w, "The server encountered a problem and could not process your request", http.StatusInternalServerError)

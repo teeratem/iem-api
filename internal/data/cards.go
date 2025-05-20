@@ -3,13 +3,13 @@ package data
 import "time"
 
 type Card struct {
-	ID         int64     // Unique integer ID for the product
-	CreatedAt  time.Time // Timestamp for when the product is added to our database
-	Name       string
-	SetName    string
-	NumberCard int32
-	Rarity     string
-	Artist     string
-	Packs      []string
-	Version    int32
+	ID         int64     `json:"id"`
+	CreatedAt  time.Time `json:"-"`
+	Name       string    `json:"name"`
+	SetName    string    `json:"setname"`
+	NumberCard int32     `json:"numbercard"`
+	Rarity     string    `json:"rarity"`
+	Artist     string    `json:"artist"`
+	Packs      []string  `json:"packs,omitzero"`
+	Version    int32     `json:"version"`
 }
