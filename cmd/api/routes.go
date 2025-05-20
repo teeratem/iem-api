@@ -17,5 +17,5 @@ func (app *application) routes() http.Handler {
 	router.HandlerFunc(http.MethodPost, "/v1/cards", app.createCardHandler)
 	router.HandlerFunc(http.MethodGet, "/v1/cards/:id", app.showCardHandler)
 
-	return router
+	return app.recoverPanic(router)
 }
